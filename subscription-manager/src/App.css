@@ -1,0 +1,405 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #eef3f8;
+  color: #1f2937;
+  font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  padding: 56px 20px 90px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), transparent 30%),
+    linear-gradient(135deg, #2563eb, #38bdf8);
+  color: white;
+}
+
+.header h1 {
+  margin: 0 0 12px;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.header p {
+  margin: 0;
+  font-size: 17px;
+  opacity: 0.92;
+}
+
+/* Layout */
+.container {
+  width: min(1080px, calc(100% - 32px));
+  margin: -54px auto 60px;
+}
+
+/* Summary */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.summary-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.summary-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.summary-card strong {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.summary-card.highlight {
+  background: #0f172a;
+  color: white;
+}
+
+.summary-card.highlight span {
+  color: #cbd5e1;
+}
+
+.summary-card.highlight strong {
+  color: #7dd3fc;
+}
+
+/* Common Card Box */
+.form-section,
+.filter-section,
+.empty-box {
+  margin-bottom: 22px;
+  padding: 26px;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5eaf1;
+}
+
+.form-section h2 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  letter-spacing: -0.4px;
+}
+
+/* Form */
+.subscription-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.subscription-form input,
+.subscription-form select,
+.subscription-form textarea,
+.filter-section input,
+.filter-section select {
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #dbe3ee;
+  color: #1f2937;
+  transition: 0.15s ease;
+}
+
+.subscription-form input::placeholder,
+.subscription-form textarea::placeholder,
+.filter-section input::placeholder {
+  color: #94a3b8;
+}
+
+.subscription-form input:focus,
+.subscription-form select:focus,
+.subscription-form textarea:focus,
+.filter-section input:focus,
+.filter-section select:focus {
+  background: white;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.subscription-form textarea {
+  grid-column: 1 / -1;
+  min-height: 92px;
+  resize: vertical;
+}
+
+.error-message {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 13px 15px;
+  border-radius: 14px;
+  background: #fff1f2;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+  font-weight: 600;
+}
+
+.form-buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+}
+
+.form-buttons button,
+.card-buttons button {
+  padding: 13px 18px;
+  border-radius: 14px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  transition: 0.15s ease;
+}
+
+.form-buttons button:hover,
+.card-buttons button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+}
+
+.cancel-button {
+  background: #64748b !important;
+}
+
+.delete-button {
+  background: #ef4444 !important;
+}
+
+/* Search Filter */
+.filter-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+/* List */
+.list-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.subscription-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5eaf1;
+  transition: 0.18s ease;
+}
+
+.subscription-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #3b82f6;
+}
+
+.subscription-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.card-top h3 {
+  margin: 0 0 9px;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.category {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status {
+  height: fit-content;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status.cancelled {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.card-info {
+  display: grid;
+  gap: 12px;
+}
+
+.card-info p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edf2f7;
+  color: #475569;
+}
+
+.card-info p:last-child {
+  border-bottom: none;
+}
+
+.card-info strong {
+  color: #111827;
+  font-weight: 800;
+}
+
+.card-info span {
+  text-align: right;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+/* Empty */
+.empty-box {
+  text-align: center;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.empty-box p {
+  margin: 0;
+  padding: 20px 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 42px 16px 78px;
+  }
+
+  .header h1 {
+    font-size: 31px;
+  }
+
+  .header p {
+    font-size: 15px;
+  }
+
+  .container {
+    width: min(100% - 24px, 1080px);
+    margin-top: -48px;
+  }
+
+  .summary,
+  .subscription-form,
+  .filter-section,
+  .list-section {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card,
+  .form-section,
+  .filter-section,
+  .empty-box,
+  .subscription-card {
+    border-radius: 18px;
+  }
+
+  .summary-card strong {
+    font-size: 25px;
+  }
+
+  .card-top {
+    flex-direction: column;
+  }
+
+  .card-info p {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .card-info span {
+    text-align: left;
+  }
+
+  .form-buttons,
+  .card-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons button,
+  .card-buttons button {
+    width: 100%;
+  }
+}
